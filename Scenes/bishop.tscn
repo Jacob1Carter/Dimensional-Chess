@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://twncvfheymf3"]
+
+[ext_resource type="PackedScene" uid="uid://cq0eo25idurs6" path="res://Models/Bishop.glb" id="1_5pmi2"]
+[ext_resource type="Script" uid="uid://db8clh16mrpdn" path="res://Scenes/ColourScript.gd" id="2_boa6r"]
+[ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_djaqy"]
+[ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_aoygi"]
+
+[node name="Bishop" instance=ExtResource("1_5pmi2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SM_Blackbishop" parent="." index="0"]
+script = ExtResource("2_boa6r")
+white_material = ExtResource("3_djaqy")
+black_material = ExtResource("4_aoygi")

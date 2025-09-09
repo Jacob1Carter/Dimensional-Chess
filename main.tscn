@@ -1,3 +1,71 @@
-[gd_scene format=3 uid="uid://bwhe6218uwp8f"]
+[gd_scene load_steps=9 format=3 uid="uid://bwhe6218uwp8f"]
+
+[ext_resource type="PackedScene" uid="uid://ctl17ou48er4f" path="res://Scenes/chess_board.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bsqs5perhmv5d" path="res://Scenes/king.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bk7iyyd0buub0" path="res://Scenes/queen.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://twncvfheymf3" path="res://Scenes/bishop.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cd0w8ma1y3qfw" path="res://Scenes/knight.tscn" id="5_lquwl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1bvp3"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1.08325, 1.08325, 1.08325, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(1.08325, 1.08325, 1.08325, 1)
+
+[sub_resource type="Sky" id="Sky_lquwl"]
+sky_material = SubResource("ProceduralSkyMaterial_1bvp3")
+
+[sub_resource type="Environment" id="Environment_7mycd"]
+background_mode = 2
+sky = SubResource("Sky_lquwl")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.604599, -0.364092, 0.708447, 0, 0.889416, 0.457098, -0.79653, -0.276361, 0.53774, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7mycd")
+
+[node name="ChessBoard" parent="." instance=ExtResource("1_0xm2m")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -0.8, 0.5, 0)
+
+[node name="KingW" parent="." groups=["WhitePieces"] instance=ExtResource("2_h2yge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.504, 0.025, 0.072)
+
+[node name="KingB" parent="." groups=["BlackPieces"] instance=ExtResource("2_h2yge")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.504, 0.025, 0.072)
+
+[node name="QueenW" parent="." groups=["WhitePieces"] instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.504, 0.025, -0.072)
+
+[node name="QueenB" parent="." groups=["BlackPieces"] instance=ExtResource("3_h2yge")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.504, 0.025, -0.072)
+
+[node name="BishopW1" parent="." groups=["WhitePieces"] instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.504, 0.025, -0.216)
+
+[node name="BishopW2" parent="." groups=["WhitePieces"] instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.504, 0.025, 0.216)
+
+[node name="BishopB1" parent="." groups=["BlackPieces"] instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.504, 0.025, 0.216)
+
+[node name="BishopB2" parent="." groups=["BlackPieces"] instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.504, 0.025, -0.216)
+
+[node name="KnightW1" parent="." groups=["WhitePieces"] instance=ExtResource("5_lquwl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.504, 0.025, -0.36)
+
+[node name="KnightW2" parent="." groups=["WhitePieces"] instance=ExtResource("5_lquwl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.504, 0.025, 0.36)
+
+[node name="KnightB1" parent="." groups=["BlackPieces"] instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504, 0.025, 0.36)
+
+[node name="KnightB2" parent="." groups=["BlackPieces"] instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504, 0.025, -0.36)

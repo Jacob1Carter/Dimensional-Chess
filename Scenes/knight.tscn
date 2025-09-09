@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd0w8ma1y3qfw"]
+
+[ext_resource type="PackedScene" uid="uid://cqykp0m4gwjt5" path="res://Models/Knight.glb" id="1_rrk28"]
+[ext_resource type="Script" uid="uid://db8clh16mrpdn" path="res://Scenes/ColourScript.gd" id="2_b66j6"]
+[ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_rslyr"]
+[ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_5h62n"]
+
+[node name="Knight" instance=ExtResource("1_rrk28")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="SM_BlackKnight" parent="." index="0"]
+script = ExtResource("2_b66j6")
+white_material = ExtResource("3_rslyr")
+black_material = ExtResource("4_5h62n")

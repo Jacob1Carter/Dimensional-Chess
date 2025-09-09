@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctl17ou48er4f"]
+
+[ext_resource type="PackedScene" uid="uid://b08lxccv32uxb" path="res://Models/ChessBoardSlim.glb" id="1_mscx1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewtbj"]
+size = Vector3(1.152, 0.046, 1.152)
+
+[node name="ChessBoard" type="StaticBody3D"]
+
+[node name="ChessBoardSlim" parent="." instance=ExtResource("1_mscx1")]
+
+[node name="SlimCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0025, 0)
+shape = SubResource("BoxShape3D_ewtbj")

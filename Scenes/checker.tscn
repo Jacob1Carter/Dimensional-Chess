@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4eittkchng54"]
+
+[ext_resource type="PackedScene" uid="uid://y2snoibgnva5" path="res://Models/Checker.glb" id="1_o6myg"]
+
+[node name="Checker" instance=ExtResource("1_o6myg")]

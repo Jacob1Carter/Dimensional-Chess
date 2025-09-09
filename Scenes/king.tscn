@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsqs5perhmv5d"]
+
+[ext_resource type="Script" uid="uid://db8clh16mrpdn" path="res://Scenes/ColourScript.gd" id="1_n3uat"]
+[ext_resource type="PackedScene" uid="uid://62rc5wxxwmrc" path="res://Models/King.glb" id="1_u63x5"]
+[ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_72xsc"]
+[ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_abtvy"]
+
+[node name="King" instance=ExtResource("1_u63x5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SM_BlackKing " parent="." index="0"]
+script = ExtResource("1_n3uat")
+white_material = ExtResource("3_72xsc")
+black_material = ExtResource("4_abtvy")
