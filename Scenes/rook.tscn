@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1e4g1pc525cs"]
 
 [ext_resource type="PackedScene" uid="uid://danvmhx5vfmm4" path="res://Models/Rook.glb" id="1_f608j"]
-[ext_resource type="Script" uid="uid://db8clh16mrpdn" path="res://Scenes/ColourScript.gd" id="2_5ob0w"]
+[ext_resource type="Script" uid="uid://db8clh16mrpdn" path="res://Scripts/ColourScript.gd" id="2_5ob0w"]
 [ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_rdgg5"]
 [ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_qjr7j"]
 
