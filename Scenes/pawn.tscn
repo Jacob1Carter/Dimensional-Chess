@@ -5,8 +5,7 @@
 [ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_018tw"]
 [ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_3ab40"]
 
-[node name="Pawn" instance=ExtResource("1_eu7ni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+[node name="Pawn" groups=["Piece"] instance=ExtResource("1_eu7ni")]
 
 [node name="SM_BlackPawn" parent="." index="0"]
 script = ExtResource("2_3865y")

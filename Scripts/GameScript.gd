@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var debug_key : String = "debug_key"
+
 var KingScene = preload("res://Scenes/king.tscn")
 var QueenScene = preload("res://Scenes/queen.tscn")
 var BishopScene = preload("res://Scenes/Bishop.tscn")
@@ -63,3 +65,23 @@ func _ready() -> void:
 		# Use call_deferred to avoid "Parent node is busy" error
 		tree.current_scene.call_deferred("add_child", piece_instance)
 		piece_instance.add_to_group(group_name)
+		piece_instance.add_to_group("Pieces")
+
+
+# this func JUST moves a piece, it does not check if it is a legal move, that should be checked before this.
+func _move(piece, x, z) -> void:
+	print_debug("HERE")
+	var pieces = get_tree().get_nodes_in_group("Pieces")
+	for piece_it in pieces:
+		if piece_it != piece and piece_it.transform.x == x and piece_it.transform.z == z:
+			# piece is taken (unimplemented)
+			piece_it.visable = false
+	position = piece.transform.origin
+	position.x = x
+	position.z = z
+	piece.tranform.origin = position
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(debug_key):
+		_move(poslist["PawnW3"][0], 0.5, 2.5)

@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_1hw32"]
 [ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_yh6ev"]
 
-[node name="Queen" instance=ExtResource("1_cm4hx")]
+[node name="Queen" groups=["Piece"] instance=ExtResource("1_cm4hx")]
 
 [node name="SM_BlackQueen " parent="." index="0"]
 script = ExtResource("2_gs1eq")

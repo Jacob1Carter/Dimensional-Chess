@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://cd0kj3v27wdtd" path="res://Models/mat_whitepiece.tres" id="3_72xsc"]
 [ext_resource type="Material" uid="uid://ba4jcjgyxgkgr" path="res://Models/mat_blackpiece.tres" id="4_abtvy"]
 
-[node name="King" instance=ExtResource("1_u63x5")]
+[node name="King" groups=["Piece"] instance=ExtResource("1_u63x5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="SM_BlackKing " parent="." index="0"]
